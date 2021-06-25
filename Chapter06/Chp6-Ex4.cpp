@@ -105,6 +105,7 @@ void LinkList::InsertBeforeItem(Item *newItem, Item *existing)
 LinkListElement *LinkList::RemoveSpecificItem(Item *item)
 {
    // add implementation
+  return 0;
 }
 
 void LinkList::DeleteSpecificItem(Item *item)
@@ -129,6 +130,7 @@ void LinkList::InsertAtEnd(Item *item)
 LinkListElement *LinkList::RemoveAtEnd()
 {
    // add implementation
+  return 0;
 }
 
 void LinkList::DeleteAtEnd()
@@ -216,7 +218,9 @@ int main()
 
    while (!(q1.IsEmpty()))
    {
-      q1.Dequeue();
+      Item *item = q1.Dequeue();
+      cout << "Dequeued item: " << *item << endl;
+      delete item;
       q1.Print();
    }
 
@@ -232,8 +236,10 @@ int main()
 
    while (!(q2.IsEmpty()))
    {
-      q2.Dequeue();
-      q2.Print();
+     Item *item = q2.Dequeue();
+     cout << "Dequeued item: " << *item << endl;
+     delete item;
+     q2.Print();
    }
 
    return 0;
